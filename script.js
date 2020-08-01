@@ -43,7 +43,7 @@ function playRound(playerSelection, computerSelection, callbackFunction){
     }
 
     callbackFunction(humanScore,computerScore);
-    
+
 }
 
 function showScore (humanScore, computerScore){
@@ -54,7 +54,7 @@ function showHelpMessage(){
     alert("Open the console to play")
 }
 
-function game() {
+function initialize() {
     showHelpMessage();
     for(let i=0; i < 5; i++){
         const playerSelection = humanPlay();
@@ -63,4 +63,4 @@ function game() {
     }
 }
 
-game();
+initialize();
