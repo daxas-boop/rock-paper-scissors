@@ -3,11 +3,31 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Rock paper scissors</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 </head>
 <body>
-    <h1>Open the console to play</h1>
+
+    <div id="container">
+        <h1 id="title">Rock Paper Scissors</h1>
+        <div id="display">
+            <div id="human-selection" ></div>
+            <div id="computer-selection" ></div>
+        </div>
+        <div id="display-text"><p id="text"></p></div>
+        <p id="help-text">Choose one option</p>
+        <div id="score"><p></p></div>
+        <div id="options">
+            <div class="rock"></div>
+            <div class="paper"></div>
+            <div class="scissors"></div>
+        </div>
+    </div>
+        <div id="results" class="hidden">You Win!</div>
+        <div id="button-container">
+            <button id="restart" class="hidden">Play again</button>
+        </div>
 
     <script src="script.js" ></script>
 </body>

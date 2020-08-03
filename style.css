@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+}
+
+#container {
+    width: 65%;
+    max-width: 1248px;
+    margin: auto;
+    text-align: center;
+    padding-top: 2rem;
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+#title {
+    margin-bottom: 10px;
+}
+
+#display {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#display-text {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#human-selection, #computer-selection {
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+}
+
+#options > div:hover{
+    cursor: pointer;
+    transform: scale(1.2, 1.2);
+}
+
+.rock {
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    background-image: url(./images/rock.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.paper {
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    background-image: url(./images/paper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.scissors {
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    background-image: url(./images/scissors.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+#help-text {
+    margin: 5px;
+    margin-top: 40px;
+}
+
+#restart {
+    background: yellow;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 10px;
+    width: 100px;
+    height: 50px;
+}
+
+#restart:hover {
+    cursor: pointer;
+    background-color: rgb(130, 173, 44);
+}
+
+.hidden {
+    display: none;
+}
+
+#results {
+    font-size: 56px;
+    padding: 20px;
+    padding-top: 50px;
+    margin: auto;
+    text-align: center;
+    font-weight: 700;
+}
+
+#button-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 700px){
+   #container{
+    width: 100%;
+   } 
+}
