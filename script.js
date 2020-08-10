@@ -7,32 +7,32 @@ function playRound(playerSelection){
     showSelections(playerSelection,computerSelection);
 
     if (playerSelection ==='rock' && computerSelection === 'rock') {
-        document.querySelector('#text').innerText = 'Draw, both choose rock';
+        document.querySelector('#text').innerText = 'Empate. Los dos elegieron piedra';
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        document.querySelector('#text').innerText ='You Lose! Paper beats Rock'
+        document.querySelector('#text').innerText ='Perdiste!'
         computerScore++;
     } else if ((playerSelection === 'rock' && computerSelection === 'scissors')) {
-        document.querySelector('#text').innerText ='You Win! Rock beats Paper'
+        document.querySelector('#text').innerText ='Ganaste!'
         humanScore ++;
     }
 
     if (playerSelection ==='paper' && computerSelection === 'paper'){
-        document.querySelector('#text').innerText ='Draw, both choose paper'
+        document.querySelector('#text').innerText ='Empate. Los dos eligieron papel'
     }else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        document.querySelector('#text').innerText ='You Lose! Scissors beats Paper'
+        document.querySelector('#text').innerText ='Perdiste!'
         computerScore++;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        document.querySelector('#text').innerText ='You Win! Paper beats Rock'
+        document.querySelector('#text').innerText ='Ganaste!'
         humanScore ++;
     }
 
     if (playerSelection ==='scissors' && computerSelection === 'scissors'){
-        document.querySelector('#text').innerText ='Draw, both choose scissors'
+        document.querySelector('#text').innerText ='Empate. Los dos eligieron tijera'
     }else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        document.querySelector('#text').innerText ='You Lose! Rock beats Scissors'
+        document.querySelector('#text').innerText ='Ganaste!'
         computerScore++;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        document.querySelector('#text').innerText ='You Win! Scissors beats paper'
+        document.querySelector('#text').innerText ='Perdiste!'
         humanScore ++;
     }
 
@@ -42,7 +42,7 @@ function playRound(playerSelection){
 
 function updateScore(humanScore, computerScore){
     const $score = document.querySelector('#score  p');
-    $score.innerText = `SCORE: ${humanScore} - ${computerScore}`
+    $score.innerText = `Puntuación: ${humanScore} - ${computerScore}`
     if(humanScore === 5 || computerScore === 5){
         setTimeout(() => finishGame(humanScore,computerScore) ,200)
     }
@@ -54,10 +54,10 @@ function finishGame(humanScore,computerScore){
     const $button = document.querySelector('#restart');
     const $results = document.querySelector('#results');
     if(humanScore > computerScore){
-        $results.innerText = `YOU WIN ! The final score was: ${humanScore} - ${computerScore}`;
+        $results.innerText = `GANASTE! La puntiación final fue de: ${humanScore} - ${computerScore}`;
     }
     if(humanScore < computerScore){
-        $results.innerText = `YOU LOSE ! The final score was: ${humanScore} - ${computerScore}`;
+        $results.innerText = `PERDISTE! La puntiación final fue de: ${humanScore} - ${computerScore}`;
     }
     $button.classList.remove('hidden');
     $results.classList.remove('hidden');
@@ -77,7 +77,7 @@ function restartGame(){
     $results.classList.add('hidden');
 
     const $score = document.querySelector('#score  p');
-    $score.innerText = `SCORE: 0 - 0`
+    $score.innerText = `Puntuación: 0 - 0`
 
     const $playerSelection = document.querySelector('#human-selection');
     const $computerSelection = document.querySelector('#computer-selection')
@@ -109,3 +109,33 @@ function initialize() {
 }
 
 initialize();
+
+
+const people = [
+    {
+      name: 'Carly',
+      yearOfBirth: 2018,
+    },
+    {
+      name: 'Ray',
+      yearOfBirth: 1962,
+      yearOfDeath: 2011
+    },
+    {
+      name: 'Jane',
+      yearOfBirth: 1912,
+      yearOfDeath: 1941
+    },
+  ]
+
+
+function findTheOldest(array) {
+    const oldest =  array.sort((a, b) => {
+        const lastGuy = a.yearOfDeath - a.yearOfBirth;
+        const nextGuy = b.yearOfDeath - b.yearOfBirth;
+        return lastGuy > nextGuy ? -1 : 1;
+    });
+    return oldest[0];
+}
+
+console.log(findTheOldest(people).name)
